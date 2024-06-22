@@ -1,3 +1,14 @@
 Canvas {
   height: 100vh!important;
 }
+input[type="color"] {
+  position: absolute;
+  left: 2rem;
+  top: 1rem;
+  height: 40px;
+  width: 40px;
+  z-index: 100;
+}
+.test {
+  background: black;
+}
