@@ -1,12 +1,19 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, OrbitControls, useGLTF } from '@react-three/drei';
 
-export default function Model({ color = "red" }) { // Corrected line
+export default function Model() { // Corrected line
   const { nodes, materials } = useGLTF('./VictorianShirt/Model.glb');
+  const [color, setColor] = useState('blue'); // Initial color set to blue
 
   return (
-    <Canvas camera={{ position: [0, 0, 20], fov: 75 }}>
+    <div>
+      <input 
+        type="color" 
+        value={color} 
+        onChange={(e) => setColor(e.target.value)} // Update color based on input
+      />
+      <Canvas camera={{ position: [0, 0, 20], fov: 75 }}>
       <Environment preset="studio" background/>
       <ambientLight intensity={1} />
       <Suspense fallback={null}>
@@ -16,6 +23,8 @@ export default function Model({ color = "red" }) { // Corrected line
         <OrbitControls />
       </Suspense>
     </Canvas>
+    </div>
+    
   );
 }
 

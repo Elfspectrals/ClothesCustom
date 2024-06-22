@@ -11,7 +11,7 @@ export default function Model(props) { // Adjusted to match the function signatu
       <ambientLight intensity={1} />
       <Suspense fallback={null}>
         <group {...props} dispose={null} scale={12}>
-          <mesh geometry={nodes.Object_5.geometry} material={materials.FabricLines_mat} />
+          <mesh geometry={nodes.Object_5.geometry} material={materials.FabricLines_mat} material-color="red"/>
           <mesh geometry={nodes.Object_7.geometry} material={materials.fabric_mat} />
           <mesh geometry={nodes.Object_9.geometry} material={materials.leather_mat} />
           <mesh geometry={nodes.Object_11.geometry} material={materials.metals_mat} />
