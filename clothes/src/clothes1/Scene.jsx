@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { Environment, OrbitControls, useGLTF } from '@react-three/drei';
 
 export default function Model({ color = "red" }) { // Corrected line
-  const { nodes, materials } = useGLTF('/scene-transformed.glb');
+  const { nodes, materials } = useGLTF('./VictorianShirt/Model.glb');
 
   return (
     <Canvas camera={{ position: [0, 0, 20], fov: 75 }}>
@@ -19,4 +19,4 @@ export default function Model({ color = "red" }) { // Corrected line
   );
 }
 
-useGLTF.preload('/scene-transformed.glb');
+useGLTF.preload('./VictorianShirt/Model.glb');
