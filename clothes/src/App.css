@@ -3,12 +3,39 @@ Canvas {
 }
 input[type="color"] {
   position: absolute;
-  left: 2rem;
-  top: 1rem;
+  left: 4rem;
+  top: 2rem;
   height: 40px;
   width: 40px;
-  z-index: 100;
+  z-index: 1;
 }
-.test {
+
+.arrow-container {
+  position: relative; /* This makes the absolute positioning of its children relative to this container */
   background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: white;
+}
+
+.arrow-container svg {
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+.arrow-container > :first-child {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the element vertically */
+}
+
+.arrow-container > :last-child {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the element vertically */
 }
